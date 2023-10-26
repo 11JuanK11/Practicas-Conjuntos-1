@@ -56,7 +56,7 @@ public class Operaciones {
         return S;
     }
     
-    public static void ListarOrdenadoPrecio(){
+    public static void ListarOrdenadoPrecio(){}
         
     public static Set Recuperar(){
         Set<Hotel> conj = new HashSet();
