@@ -1,1 +1,13 @@
+1,Hotel A,Playa;Montaña;Rural,80
+2,Hotel B,Montaña,150
+3,Hotel C,Playa,40
+4,Hotel D,Playa;Rural,120
+5,Hotel E,Montaña;Rural,60
+6,Hotel F,Rural,100
+7,Hotel G,Playa,60
+8,Hotel H,Montaña,80
+9,Hotel I,Rural;Playa,150
+10,Hotel J,Rural,80
+11,Hotel K,Montaña,40
+12,Hotel L,Playa,120
 
