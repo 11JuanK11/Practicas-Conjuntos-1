@@ -47,16 +47,20 @@ public class Operaciones {
     
     public static String ListarConjunto(ArrayList<Hotel> Array){
         String S = "Hoteles\n";
-        
         for (int i = 0; i < Array.size(); i++) {
             S = "ID: " + Array.get(i).getIDHotel() + " Nombre: " + Array.get(i).getNombre() 
                 + " Zona: " + Array.get(i).getZona() + " Precio: " + Array.get(i).getPrecio() + "\n";
         }
-     
         return S;
     }
     
-    public static void ListarOrdenadoPrecio(){}
+    public static void ListarOrdenadoPrecio(String zona, Set<Hotel> conj){
+        ArrayList<Hotel> Arreglo = new ArrayList((HashSet)conj);
+        for (Hotel object : Arreglo) {
+            
+        }
+        
+    }
         
     public static Set Recuperar(){
         Set<Hotel> conj = new HashSet();

@@ -1,7 +1,7 @@
 
 package practica;
 
-public class Hotel {
+public class Hotel implements Comparable<Hotel> {
     int IDHotel;
     String Nombre;
     String Zona;
@@ -51,6 +51,11 @@ public class Hotel {
 
     public void setPrecio(int Precio) {
         this.Precio = Precio;
+    }
+
+    @Override
+    public int compareTo(Hotel o) {
+        return this.Precio - o.Precio;
     }
     
 }
