@@ -1,7 +1,6 @@
 
 package practica;
 
-import java.util.ArrayList;
 import javax.swing.JOptionPane;
 import java.io.BufferedReader;
 import java.io.File;
@@ -36,8 +35,8 @@ public class Operaciones {
             }
         } while(Precio < 40 || Precio > 150);
         H.setPrecio(Precio);
-        
         Array.add(H);
+        ListarOrdenadoPrecio(Zona, Array);
         return Array;
     }
     
@@ -52,10 +51,19 @@ public class Operaciones {
     }
     
     public static void ListarOrdenadoPrecio(String zona, Set<Hotel> conj){
-        ArrayList<Hotel> Arreglo = new ArrayList((HashSet)conj);
-        for (Hotel object : Arreglo) {
-            
+        ArrayList<Hotel> array = new ArrayList();
+        for (Hotel object : conj) {
+            if (object.Zona.equalsIgnoreCase(zona)) {
+                array.add(object);
+            }
         }
+        SortedSet<Hotel> orden = new TreeSet(array);
+        String S = "Hoteles\n";
+        for (Hotel hotel : orden) {
+            S += "ID: " + hotel.getIDHotel() + " Nombre: " + hotel.getNombre() 
+                + " Zona: " + hotel.getZona() + " Precio: " + hotel.getPrecio() + "\n";
+        }
+        JOptionPane.showMessageDialog(null, S);
         
     }
         
