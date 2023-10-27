@@ -8,18 +8,14 @@ import java.io.File;
 import java.io.FileReader;
 import java.util.*;
 
-/**
- *
- * @author Usuario
- */
 public class Operaciones {
     private static File F = new File("./src/practica/Information/Information.txt");
     
-    public static ArrayList<Hotel>  Ingresar(ArrayList<Hotel> Array){
+    public static Set<Hotel> Ingresar(Set<Hotel> Array){
         String Zona = "", Nom = "";
         int ID = 0, Precio = 0;
         Hotel H = new  Hotel();
-        String Vector[] = {"Playa","Rural","Montaya","Playa,Rural","Montaya,Rural","Montaya,Playa","Playa,Montaña,Rural"};
+        String Vector[] = {"Playa","Rural","Montaña","Playa,Rural","Montaña,Rural","Montaña,Playa","Playa,Montaña,Rural"};
         Object St = "";
         String S = ListarConjunto(Array);
         
@@ -45,11 +41,12 @@ public class Operaciones {
         return Array;
     }
     
-    public static String ListarConjunto(ArrayList<Hotel> Array){
+    public static String ListarConjunto(Set<Hotel> Array){
         String S = "Hoteles\n";
-        for (int i = 0; i < Array.size(); i++) {
-            S = "ID: " + Array.get(i).getIDHotel() + " Nombre: " + Array.get(i).getNombre() 
-                + " Zona: " + Array.get(i).getZona() + " Precio: " + Array.get(i).getPrecio() + "\n";
+       
+        for (Hotel hotel : Array) {
+            S += "ID: " + hotel.getIDHotel() + " Nombre: " + hotel.getNombre() 
+                + " Zona: " + hotel.getZona() + " Precio: " + hotel.getPrecio() + "\n";
         }
         return S;
     }
